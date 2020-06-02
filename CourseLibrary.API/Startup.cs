@@ -89,6 +89,12 @@ namespace CourseLibrary.API
                 };
             });
 
+            // register PropertyMappingService (used for sorting)
+            services.AddTransient<IPropertyMappingService, PropertyMappingService>();
+
+            // register PropertyCheckerService (used for data shapping)
+            services.AddTransient<IPropertyCheckerService, PropertyCheckerService>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICourseLibraryRepository, CourseLibraryRepository>();
